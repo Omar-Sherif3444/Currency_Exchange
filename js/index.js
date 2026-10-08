@@ -19,6 +19,8 @@ toCurrency.addEventListener("change", updateToFlag);
 
 convertButton.addEventListener("click", () => {
   amount.value = amount.value || 1;
+  resultBox.classList.add("d-none");
+  error.classList.add("d-none");
   fetch(
     `https://v6.exchangerate-api.com/v6/38bbe80584f2da5ad1d7fe0e/latest/${fromCurrency.value}`,
   )
@@ -26,7 +28,6 @@ convertButton.addEventListener("click", () => {
       if (!resp.ok) {
         throw new Error("Something went wrong with the request.");
       }
-
       return resp.json();
     })
     .then((data) => {
