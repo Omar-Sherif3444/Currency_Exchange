@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body class="bg-dark">
+    <main
+      data-cls="converter-page"
+      class="min-vh-100 d-flex align-items-center justify-content-center p-3"
+    >
+      <div
+        data-cls="converter-card"
+        class="card border-0 shadow-lg rounded-4 overflow-hidden w-100"
+        style="max-width: 650px"
+      >
+        <div
+          data-cls="header"
+          class="card-body text-center text-white bg-primary p-4 p-md-5"
+        >
+          <div data-cls="icon" class="fs-1 mb-2">💱</div>
+
+          <h1 data-cls="title" class="fw-bold mb-2">Currency Converter</h1>
+
+          <p data-cls="subtitle" class="mb-0 opacity-75">
+            Convert currencies quickly and easily
+          </p>
+        </div>
+        <div data-cls="converter-body" class="card-body p-4 p-md-5">
+          <div data-cls="amount-group" class="mb-4">
+            <label data-cls="amount-label" class="form-label fw-semibold">
+              Amount
+            </label>
+            <input
+              data-cls="amount"
+              type="number"
+              class="form-control form-control-lg"
+              placeholder="1 By Default"
+              min="0"
+            />
+          </div>
+          <div data-cls="from-group" class="mb-3">
+            <label data-cls="from-label" class="form-label fw-semibold"
+              >From</label
+            >
+            <div class="d-flex align-items-center gap-2">
+              <img
+                data-cls="fromFlag"
+                src="https://flagsapi.com/AE/shiny/32.png"
+                alt="flag"
+              />
+              <select
+                data-cls="from-currency"
+                class="form-select form-select-lg"
+              ></select>
+            </div>
+          </div>
+          <div data-cls="swap-container" class="text-center my-3">
+            <button
+              data-cls="swap-button"
+              type="button"
+              class="btn btn-outline-primary rounded-circle"
+            >
+              ⇅
+            </button>
+          </div>
+          <div data-cls="to-group" class="mb-3">
+            <label data-cls="to-label" class="form-label fw-semibold">To</label>
+            <div class="d-flex align-items-center gap-2">
+              <img
+                data-cls="toFlag"
+                src="https://flagsapi.com/AE/shiny/32.png"
+                alt="flag"
+              />
+              <select
+                data-cls="to-currency"
+                class="form-select form-select-lg"
+              ></select>
+            </div>
+          </div>
+          <button
+            data-cls="convert-button"
+            type="button"
+            class="btn btn-primary btn-lg w-100 fw-semibold"
+          >
+            Convert
+          </button>
+          <div data-cls="loading" class="text-center mt-4 d-none">
+            <div class="spinner-border text-primary" role="status"></div>
+            <div data-cls="loading-text" class="mt-2 text-secondary">
+              Converting...
+            </div>
+          </div>
+          <div
+            data-cls="result-box"
+            class="alert alert-primary text-center mt-4 mb-0 d-none"
+          >
+            <div data-cls="result" class="fs-2 fw-bold">--</div>
+            <div data-cls="rate" class="text-secondary mt-1">--</div>
+          </div>
+          <div data-cls="error" class="alert alert-danger mt-4 mb-0 d-none">
+            <span data-cls="error-message"></span>
+          </div>
+        </div>
+        <div
+          data-cls="footer"
+          class="card-footer text-center bg-light border-0 py-3"
+        >
+          <small data-cls="footer-text" class="text-secondary">
+            Currency Converter
+          </small>
+        </div>
+      </div>
+    </main>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/currency-exchange-data.txt"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
